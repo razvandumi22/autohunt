@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", displayCars);
 const URL = "https://68e3ee488e116898997a79e1.mockapi.io/cars";
+
 function displayCars() {
   fetch(URL)
     .then((response) => {
@@ -13,13 +14,12 @@ function displayCars() {
           .map(
             (car) =>
               `<div class="car-card">
-        <img
-          src=${car.imageURL}
-          alt="Car image"
-        />
+         <div class="car-image">
+    <img src="${car.imageURL}" alt="Car image" />
+        </div>
         <div class="car-info">
           <h3>${car.marca} ${car.model}</h3>
-          <div class="price">${car.pret} &#8364</div>
+          <div class="price">${car.pret} $</div>
           <h4>${car.details}</h4>
           <h4>📅 ${car.anFabricatie}</h4>
           <h4>🛞 ${car.km} KM</h4>
